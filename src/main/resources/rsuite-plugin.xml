@@ -1,0 +1,41 @@
+<rsuite-plugin id="rsuite-smart-delete-plugin" version="1.0">
+
+    <extensionProvider id="rsuite.WebService">
+        <remoteApiDefinition id="delete:webservice.SmartDelete" handler="com.rsuite.delete.webservice.SmartDeleteWebService" />
+    </extensionProvider>
+
+    <extensionProvider id="rsuite.Forms">
+
+        <formDefinition id="delete:form.SmartDelete" label="RSuite ID Smart Delete" description="Add the RSuite IDs to delete (comma-separated).&lt;br&gt;&lt;br&gt;
+				When the RSuite ID is a folder, all its children -files and/or folders- will be also deleted.&lt;br&gt;&lt;br&gt;
+				Force Delete: use as last resource if default options cannot delete the objects. It will destroy all references to this ID &lt;br&gt;&lt;br&gt;
+				This operation cannot be reverted.&lt;br&gt;&lt;br&gt;">
+            <paramList>
+                <param>
+                    <name>include-top-level-folder</name>
+                    <label>Include Folder for Deletion?</label>
+                    <formControlType>checkbox</formControlType>
+                    <optionList>
+                        <option value="true" label="check to include" />
+                    </optionList>
+                </param>
+                <param>
+                    <name>force-delete</name>
+                    <label>Force Deletion?</label>
+                    <formControlType>checkbox</formControlType>
+                    <optionList>
+                        <option value="true" label="check to include" />
+                    </optionList>
+                </param>
+                <param>
+                    <name>smart-delete-id-list</name>
+                    <label>ID List (comma-separated):</label>
+                    <formControlType>textarea</formControlType>
+                    <validation required="true" errorMessage="Provide at least an ID."/>
+                </param>
+            </paramList>
+        </formDefinition>
+
+    </extensionProvider>
+
+</rsuite-plugin>

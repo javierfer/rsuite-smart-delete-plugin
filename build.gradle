@@ -1,0 +1,37 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+apply from: resources.text.fromUri("https://us5.rsuitecms.com/ivy-repo/orbis-std-v8.gradle")
+
+version = '1.0'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url "https://us5.rsuitecms.com/rsuite_artifactory/repo"
+    }
+    maven {
+        url "https://us5.rsuitecms.com/rsuite_artifactory/libs-release-local"
+    }
+}
+
+ext {
+    basename = 'rsuite-smart-delete-plugin'
+}
+
+dependencies {
+
+	implementation ('rsi:rsuite-api:6.12.0') {
+		transitive = false
+	}
+
+	implementation 'commons-logging:commons-logging:1.2'
+	implementation 'org.apache.commons:commons-lang3:3.8.1'
+    implementation 'commons-io:commons-io:2.4'
+
+}
