@@ -17,5 +17,24 @@
 				]
 			}
 		]
+	},
+	{
+		"pluginName": "rsuite-smart-delete-plugin",
+		"scope": "browseTreeNode",
+		"menus": [
+			{
+				"actionName": "rsuite:customAction:delete:SmartDelete",
+				"label": "Smart Delete",
+				"icon": "delete",
+				"webserviceUrl": "delete:webservice.SmartDelete",
+				"target": "all",
+				"formId": "delete:form.SmartDelete.node",
+				"ruleList": [
+					{
+						"rule": "include role RSuiteAdministrator"
+					}
+				]
+			}
+		]
 	}
 ]

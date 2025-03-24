@@ -7,7 +7,7 @@
     <extensionProvider id="rsuite.Forms">
 
         <formDefinition id="delete:form.SmartDelete" label="RSuite ID Smart Delete" description="Add the RSuite IDs to delete (comma-separated).&lt;br&gt;&lt;br&gt;
-				When the RSuite ID is a folder, all its children -files and/or folders- will be also deleted.&lt;br&gt;&lt;br&gt;
+				When the RSuite ID is a folder, all its children -files and/or subfolders- will be also deleted.&lt;br&gt;&lt;br&gt;
 				Force Delete: use as last resource if default options cannot delete the objects. It will destroy all references to this ID &lt;br&gt;&lt;br&gt;
 				This operation cannot be reverted.&lt;br&gt;&lt;br&gt;">
             <paramList>
@@ -32,6 +32,30 @@
                     <label>ID List (comma-separated):</label>
                     <formControlType>textarea</formControlType>
                     <validation required="true" errorMessage="Provide at least an ID."/>
+                </param>
+            </paramList>
+        </formDefinition>
+
+        <formDefinition id="delete:form.SmartDelete.node" label="RSuite ID Smart Delete" description="
+				On folders, all its children -files and/or subfolders- will be also deleted.&lt;br&gt;&lt;br&gt;
+				Force Delete: use as last resource if default options cannot delete the objects. It will destroy all references to this ID &lt;br&gt;&lt;br&gt;
+				This operation cannot be reverted.&lt;br&gt;&lt;br&gt;">
+            <paramList>
+                <param>
+                    <name>include-top-level-folder</name>
+                    <label>Include Folder for Deletion?</label>
+                    <formControlType>checkbox</formControlType>
+                    <optionList>
+                        <option value="true" label="check to include" />
+                    </optionList>
+                </param>
+                <param>
+                    <name>force-delete</name>
+                    <label>Force Deletion?</label>
+                    <formControlType>checkbox</formControlType>
+                    <optionList>
+                        <option value="true" label="check to include" />
+                    </optionList>
                 </param>
             </paramList>
         </formDefinition>

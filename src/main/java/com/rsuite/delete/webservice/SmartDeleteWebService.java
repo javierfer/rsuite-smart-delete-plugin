@@ -40,8 +40,8 @@ public class SmartDeleteWebService extends RemoteApiHandlerBase {
 		log.info(MESSAGE_TITLE + " start");
 
 		User user = context.getSession().getUser();
-		String idList = args.getFirstString(SMART_DELETE_ID_LIST_PARAM);
-
+		String idList = args.getFirstString(SMART_DELETE_ID_LIST_PARAM, args.getFirstString("rsuiteId"));
+		
 		int processedCount = 0;
 		int errorCount = 0;
 
