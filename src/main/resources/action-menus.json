@@ -23,7 +23,7 @@
 		"scope": "browseTreeNode",
 		"menus": [
 			{
-				"actionName": "rsuite:customAction:delete:SmartDelete",
+				"actionName": "rsuite:customAction:delete:SmartDeleteById",
 				"label": "Smart Delete",
 				"icon": "delete",
 				"webserviceUrl": "delete:webservice.SmartDelete",
